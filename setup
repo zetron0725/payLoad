@@ -1,0 +1,11 @@
+#!/data/data/com.termux/files/usr/bin/bash
+cd $HOME && cd payLoad
+echo "Executing script......"
+chmod +x payloadmaker
+echo "moving script....."
+cd $HOME && cd ..
+mv -v $HOME/payLoad/payloadmaker usr/bin
+echo "moving done...."
+echo "Now you Can Make payload easily by running [payloadmaker] command"
+echo "Enjoy...."
+
